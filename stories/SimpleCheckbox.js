@@ -6,8 +6,13 @@ const SimpleCheckbox = Form({
   defaultValues: {
     subscribe: true,
     adult: false
+  },
+  validate: (values) => {
+    return {
+      adult: !values.adult ? 'sorry kid! maybe next time' : undefined
+    }
   }
-})(({submitForm}) => {
+})(({submitForm, getTouched, getError}) => {
   return (
     <form onSubmit={submitForm}>
       <p>Submit event would have 3 objects: values, state and props.</p>
@@ -20,11 +25,14 @@ const SimpleCheckbox = Form({
         </label>
       </div>
       <div>
+        <p>show validation error outside of Checkbox component</p>
         <label>
           <Checkbox
+            showErrors={false}
             field="adult"
           />
           <span>I am over 18 years old <pre>[default is false]</pre></span>
+          <p style={{color: 'red'}}>{getTouched('adult') && getError('adult')}</p>
         </label>
       </div>
       <div>

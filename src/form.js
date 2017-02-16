@@ -47,12 +47,21 @@ export default function Form (config = {}) {
         this.emitChange(this.state, true)
       },
       componentWillReceiveProps (props) {
+        if (props.addErrors) {
+          this.setFormState({
+            errors: _.clone(props.addErrors) || {}
+          }, true)
+          this.setAllTouched()
+          return
+        }
+
         if (props.values === this.props.values) {
           return
         }
 
         this.setFormState({
-          values: _.clone(props.values) || {}
+          values: _.clone(props.values) || {},
+          errors: _.clone(props.addErrors) || {}
         }, true)
       },
       componentWillUnmount () {
@@ -138,7 +147,6 @@ export default function Form (config = {}) {
         const preSubmitValues = this.props.preSubmit(state.values, state, this.props)
         this.props.onSubmit(preSubmitValues, state, this.props)
         this.props.postSubmit(preSubmitValues, state, this.props)
-        this.setState({errors: this.props.addErrors})
       },
 
       // Utils

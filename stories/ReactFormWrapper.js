@@ -11,7 +11,7 @@ class ReactFormWrapper extends React.Component {
           onSubmit={action('submitted')}
           values={this.props.default_values}
           extra={this.props.extra}
-          addErrors={this.props.addErrors || {}}
+          addErrors={this.props.addErrors}
         />
       </div>
     )

@@ -9,9 +9,10 @@ import { withKnobs, text } from '@kadira/storybook-addon-knobs'
 
 storiesOf('Simple Form', module)
   .addDecorator(withKnobs)
-  .add('with a single text field', () => (
-    <ReactFormWrapper wrappedForm={SimpleText} addErrors={{name: 'after submit error'} || {}} />
-  ))
+  .add('with a single text field', () => {
+    const nameError = {name: text('Name Error', 'invalid name')}
+    return (<ReactFormWrapper wrappedForm={SimpleText} addErrors={nameError} />)
+  })
 
   .add('with a single text field with advanced validation', () => (
     <ReactFormWrapper wrappedForm={SimpleTextAdvancedValidation} extra={{length: 7}} />

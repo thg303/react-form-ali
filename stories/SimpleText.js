@@ -8,7 +8,7 @@ const SimpleText = Form({
       name: !name ? 'A name is required' : undefined
     }
   }
-})(({submitForm}) => {
+})(({submitForm, addErrors}) => {
   return (
     <form onSubmit={submitForm}>
       <p>Submit event would have 3 objects: values, state and props.</p>

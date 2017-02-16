@@ -35,6 +35,7 @@ React Form is a lightweight framework and utility for building powerful forms in
   - [{ FormDefaultProps }](#-formdefaultprops-)
   - [{ FormInput }](#-forminput-)
   - [{ FormError }](#-formerror-)
+  - [{ AddErrors }](#-formadderror-)
   - [{ FormField }](#-formfield-)
   - [{ Text, Select, Checkbox, Textarea, Radio }](#-text-select-checkbox-textarea-radio-)
   - [{ NestedForm }](#-nestedform-)
@@ -857,6 +858,10 @@ const example = (
   <FormError field='my.field' />
 )
 ```
+###{ AddErrors }
+- Displays an error message for the given field
+- Will only display errors after submit form
+
 
 ### { FormField }
 - A low-level react component that can be used anywhere within a form to expose the api for any field.

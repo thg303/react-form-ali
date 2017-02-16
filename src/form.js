@@ -15,7 +15,8 @@ export const FormDefaultProps = {
   willUnmount: noop,
   preSubmit: reop,
   onSubmit: noop,
-  postSubmit: noop
+  postSubmit: noop,
+  addErrors: {}
 }
 
 export default function Form (config = {}) {
@@ -137,6 +138,7 @@ export default function Form (config = {}) {
         const preSubmitValues = this.props.preSubmit(state.values, state, this.props)
         this.props.onSubmit(preSubmitValues, state, this.props)
         this.props.postSubmit(preSubmitValues, state, this.props)
+        this.setState({errors: this.props.addErrors})
       },
 
       // Utils

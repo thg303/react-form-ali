@@ -5,3 +5,4 @@ dist
 react-form.js
 
 *.log
+.idea

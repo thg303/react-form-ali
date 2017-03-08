@@ -3,6 +3,7 @@ import { storiesOf } from '@kadira/storybook'
 import ReactFormWrapper from './ReactFormWrapper'
 import SimpleText from './SimpleText'
 import SimpleTextAdvancedValidation from './SimpleTextAdvancedValidation'
+import SimpleTextWithOnChange from './SimpleTextWithOnChange'
 import SimpleCheckbox from './SimpleCheckbox'
 import SimpleSelect from './SimpleSelect'
 import { withKnobs, text } from '@kadira/storybook-addon-knobs'
@@ -12,6 +13,15 @@ storiesOf('Simple Form', module)
   .add('with a single text field', () => {
     const nameError = {name: text('Name Error', 'invalid name')}
     return (<ReactFormWrapper wrappedForm={SimpleText} addErrors={nameError} />)
+  })
+
+  .add('with a single text field with onChange callback', () => {
+    const nameError = {name: text('Name Error', 'invalid name')}
+    return (<ReactFormWrapper wrappedForm={SimpleText} addErrors={nameError} />)
+  })
+
+  .add('with a single text field with onChange callback', () => {
+    return (<ReactFormWrapper wrappedForm={SimpleTextWithOnChange} />)
   })
 
   .add('with a single text field with advanced validation', () => (

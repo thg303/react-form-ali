@@ -116,7 +116,7 @@ const MyForm = Form({
   onValidationFail () {
     window.alert('There is something wrong with your form!  Please check for any required values and try again :)')
   }
-})(({ values, submitForm, addValue, removeValue, getError }) => {
+})(({ values, submitForm, addValue, removeValue, getError, setValue }) => {
   // This is a stateless component, but you can use any valid react component to render your form.
   // Forms also supply plenty of useful props for your components to utilize. See the docs for a complete list.
   return (
@@ -128,6 +128,14 @@ const MyForm = Form({
         <Text // This is the built-in Text formInput
           field='name' // field is a string version of the field location
           placeholder='Your name' // all other props are sent through to the underlying component, in this case an <input />
+          onChange={(value) => { // it needs to call setState to apply the text field changes
+            // capitalize first letter
+            if (value.length > 0) {
+              setValue('name', value.charAt(0).toUpperCase() + value.slice(1))
+            } else {
+               setValue('name', value)
+            }
+          }}
         />
       </div>
 

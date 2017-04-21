@@ -3,7 +3,7 @@ import React from 'react'
 import _ from './utils'
 
 export default function FormField ({field, children}, context) {
-  const bind = (cb, ...args) => (...args2) => cb(...args, ...args2)
+  const bind = (cb, ...args) => (...args2) => cb(...args, ...args2) // eslint-disable-line
   return children(field ? _.mapValues(context.formAPI, d => bind(d, field)) : context.formAPI)
 }
 FormField.contextTypes = {

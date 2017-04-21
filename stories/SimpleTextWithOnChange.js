@@ -13,8 +13,8 @@ const SimpleTextWithOnChange = Form({
     <form onSubmit={submitForm}>
       <p>Submit event would have 3 objects: values, state and props.</p>
       <label>number:*</label>
-      <Text field="number" placeholder="type number..."  onChange={(value) => {
-        setValue('number', parseInt(value.replace(/,/g, ""), 10).toLocaleString())
+      <Text field="number" placeholder="type number..." onChange={(value) => {
+        setValue('number', parseInt(value.replace(/,/g, ''), 10).toLocaleString())
       }} />
       <pre>Thousands separator</pre>
       <button type="submit">Submit</button>

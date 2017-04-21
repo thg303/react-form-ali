@@ -3,7 +3,7 @@ import React from 'react'
 import FormInput from '../formInput'
 
 export default function FormInputText ({field, showErrors, errorBefore, isForm, noTouch, ...rest}) {
-  // const defaultChange = (v) =>  
+  // const defaultChange = (v) =>
   return (
     <FormInput field={field} showErrors={showErrors} errorBefore={errorBefore} isForm={isForm}>
       {({setValue, getValue, setTouched}) => {
@@ -13,7 +13,7 @@ export default function FormInputText ({field, showErrors, errorBefore, isForm, 
             value={getValue('')}
             onChange={e => {
               const {onChange} = {...rest}
-              if (typeof(onChange) === 'function') {
+              if (typeof (onChange) === 'function') {
                 onChange(e.target.value)
                 return undefined
               }

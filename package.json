@@ -1,6 +1,6 @@
 {
   "name": "react-form-ali",
-  "version": "0.13.0",
+  "version": "0.13.1",
   "description": "A fast, lightweight, opinionated table and datagrid built on React-Form",
   "license": "MIT",
   "homepage": "https://github.com/thg303/react-form#readme",
@@ -25,7 +25,7 @@
   "scripts": {
     "build:node": "babel src --out-dir lib --source-maps inline",
     "watch": "onchange 'src/**' -i -- npm-run-all build:*",
-    "test": "standard-jsx",
+    "test": "standard",
     "umd": "rm -rf react-form.js && browserify lib/index.js -s reactForm -x react -t babelify -g uglifyify -o react-form.js",
     "prepublish": "npm-run-all build:* && npm run umd",
     "postpublish": "git push --tags",
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@kadira/storybook": "^2.35.1",
     "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@thg303/standard": "^10.0.2",
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
     "babel-plugin-transform-object-assign": "^6.8.0",
@@ -54,7 +55,6 @@
     "nib": "^1.1.2",
     "npm-run-all": "^3.1.1",
     "onchange": "^3.0.2",
-    "standard-jsx": "^8.0.0",
     "stylus": "^0.54.5",
     "uglifyify": "^3.0.3"
   },

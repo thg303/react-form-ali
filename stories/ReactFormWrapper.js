@@ -2,7 +2,6 @@ import React from 'react'
 import { action } from '@kadira/storybook-addon-actions'
 
 class ReactFormWrapper extends React.Component {
-
   render () {
     const WrappedForm = this.props.wrappedForm
     return (
